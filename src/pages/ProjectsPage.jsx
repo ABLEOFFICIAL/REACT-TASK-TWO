@@ -40,37 +40,36 @@ export const projectArr = [
 
 const ProjectsPage = () => {
   return (
-    <section className=" max-w-[1170px] mx-auto">
+    <section className="max-w-[1170px] mx-auto px-4 md:px-0">
       <PageTitle text1="Our" text2="Projects" />
-      <section>
-        {projectArr.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="bg-[#FBFBFB] flex justify-between items-center mb-[60px]"
-            >
-              <img src={item.img1} className="w-[670px] h-[435px]" />
-              <div className="flex flex-col gap-10 px-[30px]">
-                <h1
-                  className="font-light text-[40px] leading-[100%
-]"
-                >
-                  {item.title}
-                </h1>
-                <p className="font-light text-[16px] leading-[25px]">
-                  {item.text.slice(0, 218)}...
-                </p>
-                <MyBtn
-                  to={`/projects/${item.id}`}
-                  classname="bg-white w-[222px] h-[71px] flex justify-center items-center"
-                >
-                  VIEW MORE
-                  <ArrowRIght classname="inline" />
-                </MyBtn>
-              </div>
+      <section className="space-y-16 md:space-y-[60px]">
+        {projectArr.map((item) => (
+          <div
+            key={item.id}
+            className="bg-[#FBFBFB] flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0"
+          >
+            <img
+              src={item.img1}
+              className="w-full md:w-[670px] h-[250px] md:h-[435px] object-cover"
+              alt={item.title}
+            />
+            <div className="flex flex-col gap-6 md:gap-10 px-2 md:px-[30px] w-full md:w-auto">
+              <h1 className="font-light text-[28px] md:text-[40px] leading-tight">
+                {item.title}
+              </h1>
+              <p className="font-light text-[15px] md:text-[16px] leading-[25px] text-justify md:text-left">
+                {item.text.slice(0, 218)}...
+              </p>
+              <MyBtn
+                to={`/projects/${item.id}`}
+                classname="bg-white w-full md:w-[222px] h-[60px] md:h-[71px] flex justify-center items-center text-sm md:text-base"
+              >
+                VIEW MORE
+                <ArrowRIght classname="inline ml-1" />
+              </MyBtn>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </section>
     </section>
   );

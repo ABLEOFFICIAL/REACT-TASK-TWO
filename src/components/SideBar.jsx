@@ -14,11 +14,11 @@ const SideBar = () => {
             <FaTimes onClick={() => setToggle(false)} size={25} />
           </div>
           <div className="flex flex-col gap-6">
-            <Link to={"/main"}>Main</Link>
+            <Link to={"/"}>Main</Link>
             <Link to={"/gallery"}>Gallery</Link>
             <Link to={"/projects"}>Projects</Link>
-            <Link to={"certificates"}>Certifications</Link>
-            <Link to={"/contacts"}>Contacts</Link>
+            <Link to={"certification"}>Certifications</Link>
+            <Link to={"/contact-us"}>Contacts</Link>
           </div>
         </nav>
       </div>

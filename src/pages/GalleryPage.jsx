@@ -26,22 +26,17 @@ export const galleryArr = [
 
 const GalleryPage = () => {
   return (
-    <div className="max-w-[1170px] mx-auto">
+    <div className="max-w-[1170px] mx-auto px-4 md:px-0">
       <PageTitle text1="Photo" text2="Gallery" />
-      {/* 
-      <h1 className="text-[64px] leading-[64px] font-light text-[#BDBDBD] w-[277.76px] py-[61px]">
-        Photo <span className="text-[#333333] font-[700]">Gallery</span>
-      </h1> */}
-      <div className="grid grid-cols-5 gap-[30px]">
-        {galleryArr.map((photo, idx) => {
-          return (
-            <img
-              key={idx}
-              src={photo}
-              className="w-[210px] h-[260px] object-cover object-center"
-            />
-          );
-        })}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-[20px] md:gap-[30px]">
+        {galleryArr.map((photo, idx) => (
+          <img
+            key={idx}
+            src={photo}
+            alt={`Gallery image ${idx + 1}`}
+            className="w-full aspect-[3/4] object-cover object-center rounded"
+          />
+        ))}
       </div>
       <Direction classname="py-20" />
     </div>

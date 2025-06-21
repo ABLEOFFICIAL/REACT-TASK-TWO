@@ -35,6 +35,7 @@ const ContactSection = () => {
     interested: "",
     message: "",
   });
+
   const handleInput = (e) => {
     const { name, value } = e.target;
     e.preventDefault();
@@ -61,20 +62,22 @@ const ContactSection = () => {
     });
     setSubmit(true);
   };
+
   return (
-    <section className="h-[603px] mt-20 max-w-[1170px] mx-auto">
-      <h1 className="text-[64px] leading-[64px] font-light py-7 text-[#BDBDBD]">
+    <section className="mt-20 max-w-[1170px] mx-auto px-4 md:px-0">
+      <h1 className="text-[40px] md:text-[64px] leading-[48px] md:leading-[64px] font-light py-7 text-[#BDBDBD]">
         Contact Us
       </h1>
-      <div className="flex justify-between items-end">
-        <div>
+
+      <div className="flex flex-col md:flex-row justify-between gap-10 md:items-end">
+        <div className="w-full md:w-auto">
           <form className="flex flex-col gap-4">
             <MyInput
               type="text"
               name="name"
               placeholder="Name"
               value={data.name}
-              classname="w-[391px] h-[46px] bg-[#F3F3F3]"
+              classname="w-full md:w-[391px] h-[46px] bg-[#F3F3F3]"
               onChange={handleInput}
             />
             <MyInput
@@ -82,7 +85,7 @@ const ContactSection = () => {
               name="phoneNumber"
               placeholder="Phone Number"
               value={data.phoneNumber}
-              classname="w-[391px] h-[46px] bg-[#F3F3F3]"
+              classname="w-full md:w-[391px] h-[46px] bg-[#F3F3F3]"
               onChange={handleInput}
             />
             <MyInput
@@ -90,7 +93,7 @@ const ContactSection = () => {
               name="email"
               placeholder="E-mail"
               value={data.email}
-              classname="w-[391px] h-[46px] bg-[#F3F3F3]"
+              classname="w-full md:w-[391px] h-[46px] bg-[#F3F3F3]"
               onChange={handleInput}
             />
             <MyInput
@@ -98,26 +101,32 @@ const ContactSection = () => {
               name="interested"
               placeholder="Interested In"
               value={data.interested}
-              classname="w-[391px] h-[46px] bg-[#F3F3F3]"
+              classname="w-full md:w-[391px] h-[46px] bg-[#F3F3F3]"
               onChange={handleInput}
             />
             <textarea
               name="message"
               placeholder="Message"
               value={data.message}
-              className="w-[391px] h-[147px] bg-[#F3F3F3] p-5 focus:outline-none"
+              className="w-full md:w-[391px] h-[147px] bg-[#F3F3F3] p-5 focus:outline-none"
               onChange={handleInput}
             ></textarea>
           </form>
-          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
-        <div>
-          <img src={Img} className="w-[749px] h-[369px]" />
+
+        <div className="w-full md:w-auto">
+          <img
+            src={Img}
+            className="w-full md:w-[749px] h-[369px] object-cover"
+            alt="Contact Illustration"
+          />
         </div>
       </div>
+
       <MyBtn
         onclick={handleForm}
-        classname="flex w-[221.81px] justify-center items-center text-[16px] px-5 py-3 bg-[#2C2C2C] text-white mt-20"
+        classname="flex w-full md:w-[221.81px] justify-center items-center text-[16px] px-5 py-3 bg-[#2C2C2C] text-white mt-10 md:mt-20"
       >
         SEND EMAIL <ArrowRIght />
       </MyBtn>
